@@ -40,12 +40,12 @@ jobs:
     strategy:
       matrix:
         os:
+          - 'amazonlinux-2'
           - 'centos-7'
           - 'centos-8'
           - 'debian-9'
           - 'ubuntu-1604'
           - 'ubuntu-1804'
-          - 'amazonlinux-2'
         suite:
           - 'server'
           - 'server-verification'
