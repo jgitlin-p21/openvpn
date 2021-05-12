@@ -12,7 +12,9 @@ resolv-retry infinite
 nobind
 persist-key
 persist-tun
-comp-lzo
+<% if @compression -%>
+<%= @compression %>
+<% end %>
 verb 3
 <ca>
 <%= @ca -%>
