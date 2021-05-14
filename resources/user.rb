@@ -24,7 +24,7 @@ action :create do
   bundle_full_path = ::File.expand_path(::File.join(destination_path, bundle_filename))
   compression = if node['openvpn']['config']['compress']
                   node['openvpn']['config']['compress']
-                elsif default['openvpn']['config']['comp-lzo']
+                elsif node['openvpn']['config']['comp-lzo']
                   'lzo'
                 end
 
