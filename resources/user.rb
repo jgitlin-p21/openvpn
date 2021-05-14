@@ -25,11 +25,8 @@ action :create do
   compression = if node['openvpn']['config']['compress']
                   node['openvpn']['config']['compress']
                 elsif default['openvpn']['config']['comp-lzo']
-                  "lzo"
-                else
-                  nil
+                  'lzo'
                 end
-
 
   execute "generate-openvpn-#{new_resource.client_name}" do
     command "./pkitool #{new_resource.client_name}"
@@ -74,7 +71,7 @@ action :create do
             ca: IO.read(ca_cert_path),
             cert: IO.read(cert_path),
             key: IO.read(key_path),
-            compression: compression
+            compression: compression,
           }.merge(new_resource.additional_vars) { |key, oldval, newval| oldval } # rubocop:disable Lint/UnusedBlockArgument
         end
       )
