@@ -209,13 +209,13 @@ files created, containing the public and private keys all inside one OpenVPN con
 #### Customizing user configuration
 
 If the provided OpenVPN configuration does not meet your needs, either because you need different configuration directives, or you want to add directives which
-are not present, you can use the node attribute `node['openvpn']['cookbook_user_conf']` to look for the template files in a different cookbook, E.G. in your 
+are not present, you can use the node attribute `node['openvpn']['cookbook_user_conf']` to look for the template files in a different cookbook, E.G. in your
 wrapper cookbook.
 
 If you only need _additional_ directives, you can use the `additional_vars` attribute of the `openvpn_user` resource to pass additional template variables to your
 custom template. This way, you can render the user configuration from this cookbook using a partial, and append (or prepend) your own config inside your template.
 
-#### Example:
+#### Example
 
 Adding a 2FA via a hardware token
 
@@ -246,7 +246,6 @@ static-challenge <%= @static_challenge %>
 auth-user-pass
 static-challenge <%= @static_challenge %>
 ```
-
 
 ### openvpn_config
 
